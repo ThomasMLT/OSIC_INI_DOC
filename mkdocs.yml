@@ -1,0 +1,14 @@
+site_name: OSIC_INI_DOC
+
+theme: readthedocs
+
+nav:
+  - Home: index.md
+  - Xschem:
+      - Output Analysis: xschem/output_analysis.md
+      - Simulations: xschem/simulations.md
+      - Drawing : xschem/drawing.md
+  - Klayout:
+      - Drawing: klayout/drawing.md
+      - LVS: klayout/lvs.md
+      - DRC: klayout/drc.md
