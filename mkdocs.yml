@@ -2,6 +2,13 @@ site_name: OSIC_INI_DOC
 
 theme: readthedocs
 
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js
+
 nav:
   - Home: index.md
   - Xschem:
@@ -12,3 +19,6 @@ nav:
       - Drawing: klayout/drawing.md
       - LVS: klayout/lvs.md
       - DRC: klayout/drc.md
+  - IC Projects Documentation:
+      - OpenSourceSwiss Analog Neuron BLock Chip: IC_projects_documentation/opensourceswisschipAnalogNeuronBlock.md
+        

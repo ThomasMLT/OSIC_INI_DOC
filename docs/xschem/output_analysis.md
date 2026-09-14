@@ -6,7 +6,6 @@ Here I propose 3 very useful ways for analyzing the results of your simulations.
 
 ## Tool Comparison
 
-## Tool Comparison
 
 | Tool / Method | Best For | Pros | Cons |
 | :--- | :--- | :--- | :--- |
@@ -20,11 +19,11 @@ Here I propose 3 very useful ways for analyzing the results of your simulations.
 
 ---
 
-## 1. Xschem In-Schematic Visualization
+## Xschem In-Schematic Visualization
 
 Xschem offers unique features to display waveforms directly on your canvas. While incredibly fast and great for teaching, they come with layout trade-offs.
 
-### Option A: Quick Command-Line Plots (`plot V(net2)`)
+### Quick Command-Line Plots (`plot V(net2)`)
 Instead of opening an external tool, you can instruct Ngspice to pop up a quick visualizer window immediately after simulating by using a simple command block in your schematic.
 
 ![](output_analysis_images/ngspice_plot.png)
@@ -41,7 +40,7 @@ Instead of opening an external tool, you can instruct Ngspice to pop up a quick 
 #### How to use it:
  To zoom on the curves, you can draw a rectangle + <kbd>right button</kbd>.
 
-### Option B: On-Schematic Waveform Graphs (`devices/launcher.sym` & `ngspice_plot`)
+### On-Schematic Waveform Graphs (`devices/launcher.sym` & `ngspice_plot`)
 You can embed full, multi-signal waveform plotting windows directly inside your schematic canvas. 
 
 ![](output_analysis_images/waveform_graph.png)
@@ -58,7 +57,7 @@ Add a scope and a wave loader to your schematic.
 
 ---
 
-### Option C: The "Scope" Symbol (`devices/probes/scope.sym`)
+### The "Scope" Symbol (`devices/probes/scope.sym`)
 Xschem includes a small "scope" symbol that you can wire directly to any node in your schematic.
 
 ![](output_analysis_images/sym_scope.png)
@@ -74,7 +73,7 @@ Add it as a symbol in `devices/probes/scope.sym`
 
 
 
-## 2. Python Plot Script
+## Python Plot Script
 
 For complex data analysis, optimization, or generating publication-quality figures, parsing the SPICE `.raw` or `.csv` files with Python is the gold standard.
 
@@ -91,7 +90,7 @@ Monte Carlo Analysis
 3D plotting of MosCap value vs. (gate voltage, bulk voltage)
 ![](output_analysis_images/3D_plot.png)
 
-## 2. Bespice Waveform Viewer
+## Bespice Waveform Viewer
 
 ### Free version 
 User friendly UI.

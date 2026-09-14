@@ -32,7 +32,7 @@ value="
 .param temp=27
 .control
 save V(I_exp)
-dc Vctrl 0 12 1
+dc Vctrl 1 12 1
 write dc_nonlinear_sweep.raw
 plot V(I_exp)
 
