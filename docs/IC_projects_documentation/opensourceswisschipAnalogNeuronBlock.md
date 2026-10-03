@@ -9,7 +9,7 @@ This Chip have been fully design using the open source tools of [IIC-OSIC-TOOLS]
 
 The chip have 3 neurons with a bias generator of 9 bias current to set the neurons bias. The bias of the current bias generator are set by a 11 bits comming from a spi block.
 
-![](opensourceswisschip\chip_description_images\INI_Block.png)
+![](opensourceswisschip/chip_description_images/INI_Block.png)
 
 We can divide the chip in 2 main blocks, the analog part and the digital part.
 
@@ -28,7 +28,7 @@ This part can be separate in 2 main system :
    1 CoreFineDAC that output the bias current that go directly to a pad to be prob off chip.
    The MasterBiais that generate the 8 coarse bias current from 100fA to 1uA,
    The CordeDiodeT that take current from the MasterBias and output this currents as valtge to the CoreFineDACs.
-![](opensourceswisschip\chip_description_images\INI_Block_analog.png)
+![](opensourceswisschip/chip_description_images/INI_Block_analog.png)
 
 
 ---
@@ -47,7 +47,7 @@ Here we detail the computation core of the chip with the :
 
 ##### Neuron 
 The neuron is an Adaptive Exponential Integrate-and-Fire (AdExp-IF) neuron.
-![](opensourceswisschip\chip_description_images\neuron.svg)
+![](opensourceswisschip/chip_description_images/neuron.svg)
 On this neuron we can find 3 main blocks :
 
 - The Integrate and Fire block :
@@ -83,7 +83,7 @@ See [Neuron + V2I test bench](#neuron-v2i).
 As input for the 3 neurons we use 3 V2I (Voltage to Current) 
 
 
-![](opensourceswisschip\chip_description_images\V2I.svg)
+![](opensourceswisschip/chip_description_images/V2I.svg)
 
 The V2I take 2 voltage inputs :
 - the positive input **inpcm_VI** 
@@ -99,7 +99,7 @@ The V2I take 2 voltage inputs :
 
 To probe the membrane voltage of the neurons we use 3 buffers
 
-![](opensourceswisschip\chip_description_images\buffP.svg)
+![](opensourceswisschip/chip_description_images/buffP.svg)
 
 The P-type buffer take the membrane voltage **SOM_mem_VTO** on is **vinp** and the negative input **vinn** and output are tie together (negative feedback) to deliver the isolated membrane voltage **MEM_PROB** to the pad. We use P-type OTA so the pmos transistor are in saturation whis low voltage because the membrane voltage varied from 0V to 0.45V.But even with the well set bias **MEM_bufferbias** at 0.25V the output is  clipped over 40mV  
 
@@ -113,7 +113,7 @@ See [buffer test bench](#buffer).
 
 #### Bias Generator
 
-![](opensourceswisschip\chip_description_images\masterBias.png)
+![](opensourceswisschip/chip_description_images/masterBias.png)
 
 Here we detail the bias generator with the :
 
@@ -137,7 +137,7 @@ Convert the ref current coming from the Master Bias into bias that are spread to
 
 It's the core of the bias generator that convert the 11 bits digital signal into an analog current and that is outputed as a bias volatge.
 
-![](opensourceswisschip\chip_description_images\CoreFineDAC.png)
+![](opensourceswisschip/chip_description_images/CoreFineDAC.png)
 
 The CoreFineDAC is compose of :
 
@@ -201,7 +201,7 @@ Result :
 
 - the adaptative system reduce the firing fréquency
 
-![](opensourceswisschip\chip_description_images\v2i_neuron_tb.bmp)
+![](opensourceswisschip/chip_description_images/v2i_neuron_tb.bmp)
 Bespice Wave plot : Neuron + V2I, Membrane voltage (blue-top) and adaptive capa (purple-bottom).
 
 A link to the testbench on the project github : [V2I + Neuron testbench](https://github.com/thomas_MT/INI_Block_Chip/xschem/testbench/neuron_tb.sch)
@@ -234,7 +234,7 @@ Result :
 - the NMOS input buffer is out of saturation and can't follow the input signal.
 
 
-![](opensourceswisschip\chip_description_images\buffer_tb.bmp)
+![](opensourceswisschip/chip_description_images/buffer_tb.bmp)
 Bespice Wave plot : Pbuffer and Nbuffer vs sine wahe input, Pbuffer (red-top), Nbuffer (blue-middle) and sine input (green-bottom).
 
 A link to the testbench on the project github : [buffer testbench](https://github.com/thomas_MT/INI_Block_Chip/xschem/testbench/buffer_tb.sch)
