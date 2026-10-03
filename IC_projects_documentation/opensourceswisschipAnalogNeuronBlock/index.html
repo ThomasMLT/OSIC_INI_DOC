@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>OpenSourceSwiss Analog Neuron BLock Chip - OSIC_INI_DOC</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "OpenSourceSwiss Analog Neuron BLock Chip";
+        var mkdocs_page_input_path = "IC_projects_documentation/opensourceswisschipAnalogNeuronBlock.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OSIC_INI_DOC
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Xschem</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../xschem/output_analysis/">Output Analysis</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../xschem/simulations/">Simulations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../xschem/drawing.md">Drawing</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Klayout</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="../../klayout/drawing.md">Drawing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../klayout/lvs.md">LVS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../klayout/drc.md">DRC</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">IC Projects Documentation</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">OpenSourceSwiss Analog Neuron BLock Chip</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#analog-part">Analog Part</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#neuron-system">Neuron System</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bias-generator">Bias Generator</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#chip-inputsoutputs">Chip Inputs/Outputs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#test-benchs">Test Benchs</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#neuron-v2i">neuron + V2I</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#buffer">buffer</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#biasgen">biasgen</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OSIC_INI_DOC</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">IC Projects Documentation</li>
+      <li class="breadcrumb-item active">OpenSourceSwiss Analog Neuron BLock Chip</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="opensourceswiss-ini-block-chip-documentation">OpenSourceSwiss INI Block Chip Documentation</h1>
+<p>This documentation is for the Analog Neuron Block (3 neurons AdExp-IF test bench) on the Open Source Swiss Chip project.
+This Chip have been fully design using the open source tools of <a href="https://github.com/iic-jku/iic-osic-tools">IIC-OSIC-TOOLS</a> docker. The chip is not made to be used in a real application but to be used as a test bench for the IIC-OSIC-TOOLS docker on the IHP 130nm PDK sg13cmos5l.</p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>The chip have 3 neurons with a bias generator of 9 bias current to set the neurons bias. The bias of the current bias generator are set by a 11 bits comming from a spi block.</p>
+<p><img alt="" src="../opensourceswisschip/chip_description_images/INI_Block.png" /></p>
+<p>We can divide the chip in 2 main blocks, the analog part and the digital part.</p>
+<hr />
+<h3 id="analog-part">Analog Part</h3>
+<p>This part can be separate in 2 main system : </p>
+<ul>
+<li>
+<p>The Neuron System composed of :
+   3 neurons  Adaptive Exponential Integrate-and-Fire (AdExp-IF) feed by one V2I each with the exact same input for the 3. 
+   3 buffer to prob the membrane voltage of the neurons.</p>
+</li>
+<li>
+<p>The Bias Generator composed of :
+   8 CoreFineDAC that output the bias current of the neurons,
+   1 CoreFineDAC that output the bias current that go directly to a pad to be prob off chip.
+   The MasterBiais that generate the 8 coarse bias current from 100fA to 1uA,
+   The CordeDiodeT that take current from the MasterBias and output this currents as valtge to the CoreFineDACs.
+<img alt="" src="../opensourceswisschip/chip_description_images/INI_Block_analog.png" /></p>
+</li>
+</ul>
+<hr />
+<h4 id="neuron-system">Neuron System</h4>
+<p>Here we detail the computation core of the chip with the :</p>
+<ul>
+<li>
+<p>3 neurons</p>
+</li>
+<li>
+<p>3 V2I (neuron input current)</p>
+</li>
+<li>
+<p>3 Pbuffer (neuron membrane voltage probing)</p>
+</li>
+</ul>
+<hr />
+<h5 id="neuron">Neuron</h5>
+<p>The neuron is an Adaptive Exponential Integrate-and-Fire (AdExp-IF) neuron.
+<img alt="" src="../opensourceswisschip/chip_description_images/neuron.svg" />
+On this neuron we can find 3 main blocks :</p>
+<ul>
+<li>
+<p>The Integrate and Fire block :</p>
+<ul>
+<li>
+<p>The <code>DPI_gain</code> take the input current from the <a href="#v2i"><code>V2I</code></a> <strong>DPI_in_UNI</strong> and multiply it by a gain current set by <strong>DPI_gain_VNI</strong> and divide it by a leak current set by <strong>DPI_lk_VNI</strong>,</p>
+</li>
+<li>
+<p>The membrane capacitor <code>cfringe60x8</code> of 1.1pF integrate the <code>DPI_gain</code> output current and the membrane voltage that follow a <a href="#completeVmenEq">function almost proportional</a> to <strong>SOM_mem_VTO</strong> <span class="arithmatex">\(= \log(\frac{I_{gain} I_{in}}{I_{lk}})\)</span> when charging.
+When the input current of the neuron <strong>DPI_in_UNI</strong> is null the membrane voltage will discharge with a time constant of <span class="arithmatex">\(\tau = \frac{C_{mem}}{I_{lk}}\)</span>.</p>
+</li>
+<li>
+<p>The <code>FB_system</code> take the membrane voltage <strong>SOM_mem_VTO</strong> and send it to an inverter with a upper threshold fixed around 410mV. The output of the inverter is the spike output asynchronous digital signal that after a inversion and cleaning by a new inverter with a high current ouput <code>inv_hc</code> <strong>req_VAO</strong>.</p>
+</li>
+<li>
+<p>The <code>REF_system</code> take the spike output request <strong>req_VABO</strong> and acknowledge <strong>ack_VABO</strong> and reset the membrane voltage <strong>SOM_mem_VTO</strong> to 0V in case of a spike. The reset last a certain refractory set by the leakage current <strong>REF_lk_VNI</strong> of the refractory capacitor <code>cfringe38x8</code> with a time constant of <span class="arithmatex">\(\tau = \frac{C_{ref}}{I_{lk}}\)</span>. </p>
+</li>
+</ul>
+</li>
+</ul>
+<p><a id="completeVmenEq"></a> </p>
+<hr />
+<h6 id="more-neuron-details">More neuron details</h6>
+<p><em>for</em> <strong>SOM_mem_VTO</strong> <span class="arithmatex">\(&gt;\)</span>  <strong>DPI_gain_VNI</strong> :</p>
+<blockquote>
+<p><strong>SOM_mem_VTO</strong> <span class="arithmatex">\(= \frac{1}{k} \times \log(\frac{I_{gain} I_{in}}{I_{lk}} \times \frac{1}{I_{0}(1+\tau \cdot k \cdot \frac{dVmem}{dt})} )\)</span></p>
+</blockquote>
+<p>See <a href="#neuron-v2i">Neuron + V2I test bench</a>.</p>
+<hr />
+<h5 id="v2i">V2I</h5>
+<p>As input for the 3 neurons we use 3 V2I (Voltage to Current) </p>
+<p><img alt="" src="../opensourceswisschip/chip_description_images/V2I.svg" /></p>
+<p>The V2I take 2 voltage inputs :
+- the positive input <strong>inpcm_VI</strong> 
+- the negative input <strong>inncmn_VI</strong>
+- the output current <strong>out_UPO</strong> feed directly the neuron with a positive current following the equation :</p>
+<blockquote>
+<p><strong>out_UPO</strong> <span class="arithmatex">\(=\)</span> <strong>imax_UPT</strong> <span class="arithmatex">\((1+\tanh(\frac{k_{p}}{2}\cdot(\)</span><strong>inpcm_VI</strong> <span class="arithmatex">\(-\)</span> <strong>inncmn_VI</strong> <span class="arithmatex">\()))\)</span></p>
+<p>(see <a href="https://www.scribd.com/doc/71922891/Analog-VLSI-Circuits-and-Principles-Shih-Chii-Liu-Jorg-Kramer-Giacomo-Indiveri-Tobias-Delbruck-amp-Rodney-Douglas#page=157">Analog VLSI : Circuits and Principles</a>)</p>
+</blockquote>
+<hr />
+<h5 id="pbuffer">PBuffer</h5>
+<p>To probe the membrane voltage of the neurons we use 3 buffers</p>
+<p><img alt="" src="../opensourceswisschip/chip_description_images/buffP.svg" /></p>
+<p>The P-type buffer take the membrane voltage <strong>SOM_mem_VTO</strong> on is <strong>vinp</strong> and the negative input <strong>vinn</strong> and output are tie together (negative feedback) to deliver the isolated membrane voltage <strong>MEM_PROB</strong> to the pad. We use P-type OTA so the pmos transistor are in saturation whis low voltage because the membrane voltage varied from 0V to 0.45V.But even with the well set bias <strong>MEM_bufferbias</strong> at 0.25V the output is  clipped over 40mV  </p>
+<hr />
+<h6 id="more-buffer-details">More buffer details</h6>
+<p>See <a href="#buffer">buffer test bench</a>.</p>
+<hr />
+<h4 id="bias-generator">Bias Generator</h4>
+<p><img alt="" src="../opensourceswisschip/chip_description_images/masterBias.png" /></p>
+<p>Here we detail the bias generator with the :</p>
+<ul>
+<li>
+<p>8 CoreFineDAC (generate the bias currents for the neurons and the V2Is)</p>
+</li>
+<li>
+<p>Probe CoreFineDAC (generate the bias current that go directly to a pad to be probe off chip)</p>
+</li>
+<li>
+<p>Master Bias (generate the coarse bias current)</p>
+</li>
+<li>
+<p>CorediodeT (take the coarse bias current and output it as voltage to the CoreFineDACs)</p>
+</li>
+</ul>
+<hr />
+<h5 id="corediodet">CoreDiodeT</h5>
+<p>Convert the ref current coming from the Master Bias into bias that are spread to all the CoreFineDAC. Its just mad of 8 transistors in diode. Some capacitances are add to each diode to stabalize the ref bias value in case of perturbations.</p>
+<hr />
+<h5 id="corefinedac">CoreFineDAC</h5>
+<p>It's the core of the bias generator that convert the 11 bits digital signal into an analog current and that is outputed as a bias volatge.</p>
+<p><img alt="" src="../opensourceswisschip/chip_description_images/CoreFineDAC.png" /></p>
+<p>The CoreFineDAC is compose of :</p>
+<ul>
+<li>
+<p>Selmux (select the one of the 8 coarse current from the MasterBias but as voltage because of the CorediodeT conversion)</p>
+</li>
+<li>
+<p>Reference current generator (it's the other side of the CoreDiodeT that together build the complet current mirror)</p>
+</li>
+<li>
+<p>8 currents splitters (it's 8 analog gates that route a variant part of the ref current to the ouput the fact the architecture in resistance series give a proportiannol control of the current value with each gates controled by one bit each of the digital command signal.)</p>
+</li>
+<li>
+<p>P-type and N-type OutputDiode (convert this output current into 2 bias voltages one for a P-type bias and one for N-type bias directly routed to the neurone bias)</p>
+</li>
+<li>
+<p>11 inverter (the digital signal also need is barre version to well control the analog mux or the splitters that send the other part of the ref current to VDD)</p>
+</li>
+</ul>
+<hr />
+<h5 id="masterbias">MasterBias</h5>
+<p>(To be completed made by Irem Ilter)</p>
+<hr />
+<h6 id="more-buffer-details_1">More buffer details</h6>
+<p>See <a href="#biasgen">bias gen test bench</a>.</p>
+<hr />
+<h2 id="chip-inputsoutputs">Chip Inputs/Outputs</h2>
+<p>Here <a href="https://docs.google.com/spreadsheets/d/124ZOFY8lVLMJDaEyzbcHdURHHhNPYGQzdp3A8aTO6VY/edit?gid=829171503#gid=829171503">Chip Inputs/Ouputs Excel</a> : the excel of the chip inputs and outputs</p>
+<hr />
+<h2 id="test-benchs">Test Benchs</h2>
+<p>In this part you can find all the working testbench of the systems described below.
+Every time you can find a link to the files of the project github.
+I recommande you to download all the xschem folder to make the testbenchs run easylly.</p>
+<hr />
+<h3 id="neuron-v2i">neuron + V2I</h3>
+<p>A simple test bench of the AdExp-IF neuron simulated on 50ms :</p>
+<p>Setup :</p>
+<ul>
+<li>
+<p>V2I Positiv Input = 0.45 V</p>
+</li>
+<li>
+<p>V2I Negativ Input = 0.40 V</p>
+</li>
+<li>
+<p>V2I max current output = 5 nA</p>
+</li>
+</ul>
+<p>Result :</p>
+<ul>
+<li>
+<p>fire around 300 Hz</p>
+</li>
+<li>
+<p>the adaptative system reduce the firing fréquency</p>
+</li>
+</ul>
+<p><img alt="" src="../opensourceswisschip/chip_description_images/v2i_neuron_tb.bmp" />
+Bespice Wave plot : Neuron + V2I, Membrane voltage (blue-top) and adaptive capa (purple-bottom).</p>
+<p>A link to the testbench on the project github : <a href="https://github.com/thomas_MT/INI_Block_Chip/xschem/testbench/neuron_tb.sch">V2I + Neuron testbench</a></p>
+<p>This test bench simulate the final version of the neuron, with the cap mfringe for all the capacity of the circuit, this devise is only available in sg13cmos5l. So you must run this simulation with this PDK.</p>
+<p>If you are using the <a href="https://github.com/iic-jku/iic-osic-tools">IIC-OSIC-TOOLS</a> docker,
+use the the command :</p>
+<blockquote>
+<p>sak-pdk ihp-sg13cmos5l</p>
+</blockquote>
+<p>to change the your current package.</p>
+<hr />
+<h3 id="buffer">buffer</h3>
+<p>A simple test bench of the buffer input PMOS vs input NMOS  simulated on 1ms :</p>
+<p>Setup :</p>
+<ul>
+<li>
+<p>input magnitude = 0.4 V</p>
+</li>
+<li>
+<p>input frequency = 10 KHz</p>
+</li>
+</ul>
+<p>Result :</p>
+<ul>
+<li>
+<p>the PMOS input buffer (version use on the chip) succed to follow the input signal excpet under 40mV. By the testing the chip on silicon ou will not be able to record the behaviours of the membrane under 40mV.</p>
+</li>
+<li>
+<p>the NMOS input buffer is out of saturation and can't follow the input signal.</p>
+</li>
+</ul>
+<p><img alt="" src="../opensourceswisschip/chip_description_images/buffer_tb.bmp" />
+Bespice Wave plot : Pbuffer and Nbuffer vs sine wahe input, Pbuffer (red-top), Nbuffer (blue-middle) and sine input (green-bottom).</p>
+<p>A link to the testbench on the project github : <a href="https://github.com/thomas_MT/INI_Block_Chip/xschem/testbench/buffer_tb.sch">buffer testbench</a></p>
+<hr />
+<h3 id="biasgen">biasgen</h3>
+<p>to doooooo</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../xschem/simulations/" class="btn btn-neutral float-left" title="Simulations"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../xschem/simulations/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Output Analysis - OSIC_INI_DOC</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Output Analysis";
+        var mkdocs_page_input_path = "xschem/output_analysis.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OSIC_INI_DOC
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Xschem</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Output Analysis</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#tool-comparison">Tool Comparison</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#xschem-in-schematic-visualization">Xschem In-Schematic Visualization</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#quick-command-line-plots-plot-vnet2">Quick Command-Line Plots (plot V(net2))</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#how-to-instantiate-it">How to instantiate it:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#how-to-use-it">How to use it:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#on-schematic-waveform-graphs-deviceslaunchersym-ngspice_plot">On-Schematic Waveform Graphs (devices/launcher.sym &amp; ngspice_plot)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#how-to-instantiate-it_1">How to instantiate it:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#how-to-use-it_1">How to use it:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-scope-symbol-devicesprobesscopesym">The "Scope" Symbol (devices/probes/scope.sym)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#how-to-instantiate-it_2">How to instantiate it:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#how-to-use-it_2">How to use it:</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#python-plot-script">Python Plot Script</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#how-to-instantiate-it_3">How to instantiate it:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example">Example :</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#bespice-waveform-viewer">Bespice Waveform Viewer</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#free-version">Free version</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#free-version-limitations">free version limitations :</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../simulations/">Simulations</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../drawing.md">Drawing</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Klayout</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="../../klayout/drawing.md">Drawing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../klayout/lvs.md">LVS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../klayout/drc.md">DRC</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">IC Projects Documentation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../IC_projects_documentation/opensourceswisschipAnalogNeuronBlock/">OpenSourceSwiss Analog Neuron BLock Chip</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OSIC_INI_DOC</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Xschem</li>
+      <li class="breadcrumb-item active">Output Analysis</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="output-analysis">Output Analysis</h1>
+<p>Here I propose 3 very useful ways for analyzing the results of your simulations. Each has its own strengths and weaknesses, so the best things is to use them in combination depending on your needs.</p>
+<hr />
+<h2 id="tool-comparison">Tool Comparison</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tool / Method</th>
+<th style="text-align: left;">Best For</th>
+<th style="text-align: left;">Pros</th>
+<th style="text-align: left;">Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>In-Schematic: <code>plot V(net)</code></strong> <em>(Option A)</em></td>
+<td style="text-align: left;">Instant, zero-setup sanity checks</td>
+<td style="text-align: left;">Pop-up window triggers automatically with zero configuration.</td>
+<td style="text-align: left;">Uses raw, retro X11 system graphics. Hard to customize.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>In-Schematic: Graphs</strong> <em>(Option B)</em></td>
+<td style="text-align: left;">Embedded visual feedback</td>
+<td style="text-align: left;">Plotted directly on the canvas; fast axis panning/zooming; highly configurable.</td>
+<td style="text-align: left;">Lines can look jagged; background is black; not suited for formal papers.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>In-Schematic: Scope Symbol</strong> <em>(Option C)</em></td>
+<td style="text-align: left;">Educational &amp; clean schematics</td>
+<td style="text-align: left;">Wire-level debugging; shows waveforms directly over the physical circuit node.</td>
+<td style="text-align: left;">Tiny visual area; easily clutters the schematic layout if overused.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Python Plot Script</strong></td>
+<td style="text-align: left;">Publication-grade plots &amp; complex analysis</td>
+<td style="text-align: left;">Infinite flexibility; perfect for 3D plots, Monte Carlo, and AI script-generation.</td>
+<td style="text-align: left;">Requires basic coding; slower workflow for quick iterative debugging.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>BeSpice Wave (Free)</strong></td>
+<td style="text-align: left;">High-performance, clean interactive debugging</td>
+<td style="text-align: left;">Extremely fast file loading; unmatched precision cursor system; clean UI.</td>
+<td style="text-align: left;">Restricted features (no Y-axis log scale, no curve renaming without license).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<hr />
+<h2 id="xschem-in-schematic-visualization">Xschem In-Schematic Visualization</h2>
+<p>Xschem offers unique features to display waveforms directly on your canvas. While incredibly fast and great for teaching, they come with layout trade-offs.</p>
+<h3 id="quick-command-line-plots-plot-vnet2">Quick Command-Line Plots (<code>plot V(net2)</code>)</h3>
+<p>Instead of opening an external tool, you can instruct Ngspice to pop up a quick visualizer window immediately after simulating by using a simple command block in your schematic.</p>
+<p><img alt="" src="../output_analysis_images/ngspice_plot.png" /></p>
+<h4 id="how-to-instantiate-it">How to instantiate it:</h4>
+<p>You place a text symbol (like <code>code_shown.sym</code> ) on your canvas and write a standard SPICE control block containing:
+  <code>spice
+  .control
+    tran 1n 10u
+    plot v(net2) v(net3)
+  .endc</code></p>
+<h4 id="how-to-use-it">How to use it:</h4>
+<p>To zoom on the curves, you can draw a rectangle + <kbd>right button</kbd>.</p>
+<h3 id="on-schematic-waveform-graphs-deviceslaunchersym-ngspice_plot">On-Schematic Waveform Graphs (<code>devices/launcher.sym</code> &amp; <code>ngspice_plot</code>)</h3>
+<p>You can embed full, multi-signal waveform plotting windows directly inside your schematic canvas. </p>
+<p><img alt="" src="../output_analysis_images/waveform_graph.png" /></p>
+<h4 id="how-to-instantiate-it_1">How to instantiate it:</h4>
+<p>Add a scope and a wave loader to your schematic. 
+<img alt="" src="../output_analysis_images/waveform_graph_instanciation.png" /></p>
+<h4 id="how-to-use-it_1">How to use it:</h4>
+<p>To zoom use <kbd>shift</kbd> + <kbd>mouse wheel</kbd> on one of the axes, to pan use the mouse wheel.</p>
+<p>The plot is highly settable double click on the plot to open the settings window :
+<img alt="" src="../output_analysis_images/waveform_graph_settings.png" /></p>
+<hr />
+<h3 id="the-scope-symbol-devicesprobesscopesym">The "Scope" Symbol (<code>devices/probes/scope.sym</code>)</h3>
+<p>Xschem includes a small "scope" symbol that you can wire directly to any node in your schematic.</p>
+<p><img alt="" src="../output_analysis_images/sym_scope.png" /></p>
+<h4 id="how-to-instantiate-it_2">How to instantiate it:</h4>
+<p>Add it as a symbol in <code>devices/probes/scope.sym</code></p>
+<h4 id="how-to-use-it_2">How to use it:</h4>
+<p><kbd>Alt+G</kbd> on the net that you want to plot.
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Mouse wheel</kbd> to zoom in/out, <kbd>Ctrl</kbd> + <kbd>Mouse wheel</kbd> to pan. </p>
+<hr />
+<h2 id="python-plot-script">Python Plot Script</h2>
+<p>For complex data analysis, optimization, or generating publication-quality figures, parsing the SPICE <code>.raw</code> or <code>.csv</code> files with Python is the gold standard.</p>
+<h3 id="how-to-instantiate-it_3">How to instantiate it:</h3>
+<p>It's especially convinient because of AI generated scripts*
+The <code>spicelib.raw.raw_read</code> lib is usefull to read the raw files from Ngspice.</p>
+<h3 id="example">Example :</h3>
+<p>Monte Carlo Analysis
+<img alt="" src="../output_analysis_images/mc_analysis.png" /></p>
+<p>3D plotting of MosCap value vs. (gate voltage, bulk voltage)
+<img alt="" src="../output_analysis_images/3D_plot.png" /></p>
+<h2 id="bespice-waveform-viewer">Bespice Waveform Viewer</h2>
+<h3 id="free-version">Free version</h3>
+<p>User friendly UI.
+Very fast, and clean visualization of waveforms, with a very good cursor system.</p>
+<h3 id="free-version-limitations">free version limitations :</h3>
+<p>-curves renaming
+-logarithmic scale on y axis</p>
+<p>to export an image directly from the viewer, you need to detach the plot window from the main application window :
+<img alt="" src="../output_analysis_images/detach_plot_window.png" /></p>
+<p>then use export BMP image : 
+ <img alt="" src="../output_analysis_images/export_button.png" /></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../.." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../simulations/" class="btn btn-neutral float-right" title="Simulations">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../simulations/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
