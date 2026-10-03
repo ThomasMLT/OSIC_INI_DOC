@@ -85,6 +85,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#buffer">buffer</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#biasgen">biasgen</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -226,25 +228,105 @@ When the input current of the neuron <strong>DPI_in_UNI</strong> is null the mem
 </li>
 </ul>
 <hr />
+<h5 id="corediodet">CoreDiodeT</h5>
+<p>Convert the ref current coming from the Master Bias into bias that are spread to all the CoreFineDAC. Its just mad of 8 transistors in diode. Some capacitances are add to each diode to stabalize the ref bias value in case of perturbations.</p>
+<hr />
 <h5 id="corefinedac">CoreFineDAC</h5>
+<p>It's the core of the bias generator that convert the 11 bits digital signal into an analog current and that is outputed as a bias volatge.</p>
+<p><img alt="" src="../opensourceswisschip/chip_description_images/CoreFineDAC.png" /></p>
 <p>The CoreFineDAC is compose of :</p>
 <ul>
 <li>
 <p>Selmux (select the one of the 8 coarse current from the MasterBias but as voltage because of the CorediodeT conversion)</p>
 </li>
-<li></li>
+<li>
+<p>Reference current generator (it's the other side of the CoreDiodeT that together build the complet current mirror)</p>
+</li>
+<li>
+<p>8 currents splitters (it's 8 analog gates that route a variant part of the ref current to the ouput the fact the architecture in resistance series give a proportiannol control of the current value with each gates controled by one bit each of the digital command signal.)</p>
+</li>
+<li>
+<p>P-type and N-type OutputDiode (convert this output current into 2 bias voltages one for a P-type bias and one for N-type bias directly routed to the neurone bias)</p>
+</li>
+<li>
+<p>11 inverter (the digital signal also need is barre version to well control the analog mux or the splitters that send the other part of the ref current to VDD)</p>
+</li>
 </ul>
 <hr />
-<h5 id="corediodet">CoreDiodeT</h5>
-<hr />
 <h5 id="masterbias">MasterBias</h5>
+<p>(To be completed made by Irem Ilter)</p>
+<hr />
+<h6 id="more-buffer-details_1">More buffer details</h6>
+<p>See <a href="#biasgen">bias gen test bench</a>.</p>
 <hr />
 <h2 id="chip-inputsoutputs">Chip Inputs/Outputs</h2>
+<p>Here <a href="https://docs.google.com/spreadsheets/d/124ZOFY8lVLMJDaEyzbcHdURHHhNPYGQzdp3A8aTO6VY/edit?gid=829171503#gid=829171503">Chip Inputs/Ouputs Excel</a> : the excel of the chip inputs and outputs</p>
 <hr />
 <h2 id="test-benchs">Test Benchs</h2>
+<p>In this part you can find all the working testbench of the systems described below.
+Every time you can find a link to the files of the project github.
+I recommande you to download all the xschem folder to make the testbenchs run easylly.</p>
+<hr />
 <h3 id="neuron-v2i">neuron + V2I</h3>
-<p>this is the test bench for the neuron and the V2I. </p>
+<p>A simple test bench of the AdExp-IF neuron simulated on 50ms :</p>
+<p>Setup :</p>
+<ul>
+<li>
+<p>V2I Positiv Input = 0.45 V</p>
+</li>
+<li>
+<p>V2I Negativ Input = 0.40 V</p>
+</li>
+<li>
+<p>V2I max current output = 5 nA</p>
+</li>
+</ul>
+<p>Result :</p>
+<ul>
+<li>
+<p>fire around 300 Hz</p>
+</li>
+<li>
+<p>the adaptative system reduce the firing fréquency</p>
+</li>
+</ul>
+<p><img alt="" src="../opensourceswisschip/chip_description_images/v2i_neuron_tb.bmp" />
+Bespice Wave plot : Neuron + V2I, Membrane voltage (blue-top) and adaptive capa (purple-bottom).</p>
+<p>A link to the testbench on the project github : <a href="https://github.com/thomas_MT/INI_Block_Chip/xschem/testbench/neuron_tb.sch">V2I + Neuron testbench</a></p>
+<p>This test bench simulate the final version of the neuron, with the cap mfringe for all the capacity of the circuit, this devise is only available in sg13cmos5l. So you must run this simulation with this PDK.</p>
+<p>If you are using the <a href="https://github.com/iic-jku/iic-osic-tools">IIC-OSIC-TOOLS</a> docker,
+use the the command :</p>
+<blockquote>
+<p>sak-pdk ihp-sg13cmos5l</p>
+</blockquote>
+<p>to change the your current package.</p>
+<hr />
 <h3 id="buffer">buffer</h3>
+<p>A simple test bench of the buffer input PMOS vs input NMOS  simulated on 1ms :</p>
+<p>Setup :</p>
+<ul>
+<li>
+<p>input magnitude = 0.4 V</p>
+</li>
+<li>
+<p>input frequency = 10 KHz</p>
+</li>
+</ul>
+<p>Result :</p>
+<ul>
+<li>
+<p>the PMOS input buffer (version use on the chip) succed to follow the input signal excpet under 40mV. By the testing the chip on silicon ou will not be able to record the behaviours of the membrane under 40mV.</p>
+</li>
+<li>
+<p>the NMOS input buffer is out of saturation and can't follow the input signal.</p>
+</li>
+</ul>
+<p><img alt="" src="../opensourceswisschip/chip_description_images/buffer_tb.bmp" />
+Bespice Wave plot : Pbuffer and Nbuffer vs sine wahe input, Pbuffer (red-top), Nbuffer (blue-middle) and sine input (green-bottom).</p>
+<p>A link to the testbench on the project github : <a href="https://github.com/thomas_MT/INI_Block_Chip/xschem/testbench/buffer_tb.sch">buffer testbench</a></p>
+<hr />
+<h3 id="biasgen">biasgen</h3>
+<p>to doooooo</p>
               
             </div>
           </div><footer>
